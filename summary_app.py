@@ -20,7 +20,7 @@ topic = st.selectbox(
     list(topics.values()))
 #create slider to allow probablility to be selected
 prob = st.slider('Select the lowest probability that text relates to this topic before it is summarised.', min_value = 0.0,
-                           max_value = 1.0, value = 0.9, step = 0.2)
+                           max_value = 1.0, value = 0.8, step = 0.2)
 
 ## read in summaries from CSV
 #then just need to select correct one according to use input
