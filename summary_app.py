@@ -6,7 +6,7 @@ st.set_page_config(
     page_title="UK-AU FTA Summary",
     page_icon="👋",
 )
-#add a comment so that I have a change
+
 st.title('See Summaries of the UK-AU FTA')
 
 option = st.selectbox(
