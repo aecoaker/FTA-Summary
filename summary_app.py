@@ -39,7 +39,7 @@ filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
-    st.write(data)
+    st.write(my_df)
 
 st.subheader('Number of pickups by hour')
 hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
