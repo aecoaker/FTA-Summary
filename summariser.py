@@ -26,7 +26,7 @@ prob = st.slider('Select the lowest probability that text relates to this topic 
 #then just need to select correct one according to use input
 
 
-st.subhead('Top Level Summary')
+st.subheader('Top Level Summary')
 #abstrative summarisation here
 
 st.subheader('In Depth Summary')
