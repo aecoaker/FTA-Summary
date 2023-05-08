@@ -6,11 +6,11 @@ st.set_page_config(
     page_title="UK-AU FTA Summary",
     page_icon="👋",
 )
-
+#add a comment so that I have a change
 st.title('See Summaries of the UK-AU FTA')
 
 option = st.selectbox(
-    'What topic would you like to see a summary for?',
+    'Select a topic to see a summary for.',
     ('A', 'B', 'C'))
 
 hour_to_filter = st.slider('Select minimum probability that text relates a topic before it is included in the summary.', min_value = 0.0,
