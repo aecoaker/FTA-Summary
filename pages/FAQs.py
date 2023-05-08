@@ -18,7 +18,6 @@ st.write("""The topics were generated from the text using a method called \'Late
          within a topic, and the distribution of topics within a text both follow Dirichlet distributions. The model then
          uses the observed frequencies to fit the distributions and thus deduces the potential topics. The titles of these 
          topics must be assigned manually and this was done by the author. 
-         
          After this has been done, each text/piece of text (in this case each article within the FTA) has a topic (or topics) 
          associated with it. Alongside these are probabilities that indicated, based on the observed frequencies, how likely an
          article is to belong to a topic. The slider in the summariser allows a minimum limit for this probability to be set. 
