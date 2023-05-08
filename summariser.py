@@ -26,6 +26,11 @@ prob = st.slider('Select the lowest probability that text relates to this topic 
 #then just need to select correct one according to use input
 
 
+st.subhead('Top Level Summary')
+#abstrative summarisation here
+
+st.subheader('In Depth Summary')
+#summaries from chunks here
 
 #data_load_state = st.text('Loading data...')
 #data = load_data(10000)

@@ -25,7 +25,17 @@ st.write("""After this has been done, each text/piece of text (in this case each
          Conversely, at 1, only articles that definetely belong to a topic are summarised.""")
 
 st.subheader('How is the text summarised?')
-st.write("""Streamlit is **_really_ cool**.""")
+st.write("""Once a subset of the text from the FTA has been selected as belonging to a particular topics, it is summarised using
+         a model called 'BART'. This is a neural network which moved data through 'neurons' which manipulate it according to many 
+         millions of parameters in an attempt to replicate the mammalian brain.""")
+st.write("""Neural Networks are the most modern technique used in Natural Language Processing and continue to make waves in popular
+         culture with advancements freqently making the news. That said, they do have their limits, in particular BART is limited in
+         the length of text that it can take as input. This is approximately 1000 words. In order to meet this, the subset of text
+         is split into chunks, each of these is summarised, and those summarisations themselves are joined together and summarised.
+         This results in the 'in-depth' and 'top-level' summarisations respectively.""")
 
 st.subheader('Who might use this?')
-st.write("""Streamlit is **_really_ cool**.""")
+st.write("""Free Trade Agreements are long and complex texts, designed to go into detail about all possible ways that ways that
+         states can restrict the ways in which they trade. This is necessary from a legislative point of view but makes them
+         difficult to navigate for citizens who need to know how they apply to them and their business. A such, providing simple 
+         summaries of these texts that are relevant to users is a matter of public good.""")
