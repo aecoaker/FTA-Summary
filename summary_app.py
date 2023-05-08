@@ -21,8 +21,17 @@ topic = st.selectbox(
 prob = st.slider('Select minimum probability that text relates a topic before it is included in the summary.', min_value = 0.0,
                            max_value = 1.0, value = 0.9, step = 0.01)
 
-## read in data to be used
-my_df = pd.read_csv('article_topics.csv')
+## read in data to be used 
+articles_df = pd.read_csv('article_topics.csv')
+#filter to get articles relevant to user selection
+t = [k for k, v in topics.items() if v == topic]
+articles_to_sum = articles_df[articles_df[('prob_t' + str(t))] >= prob]
+
+
+
+
+
+
 
 #data_load_state = st.text('Loading data...')
 #data = load_data(10000)
@@ -32,8 +41,7 @@ my_df = pd.read_csv('article_topics.csv')
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
-    st.write(my_df)
-    st.write(topics)
+    st.write(articles_to_sum)
 
 #st.subheader('Number of pickups by hour')
 #hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
