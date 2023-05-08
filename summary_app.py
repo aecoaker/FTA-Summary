@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import csv
 
 st.set_page_config(
     page_title="UK-AU FTA Summary",
@@ -19,6 +20,8 @@ hour_to_filter = st.slider('Select minimum probability that text relates a topic
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
             'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+my_df = pd.read_csv('article_topics.csv')
+
 
 @st.cache_data
 def load_data(nrows):
