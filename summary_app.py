@@ -11,19 +11,18 @@ st.set_page_config(
 
 st.title('See Summaries of the UK-AU FTA')
 
-option = st.selectbox(
-    'Select a topic to see a summary for.',
-    ('A', 'B', 'C'))
-
-hour_to_filter = st.slider('Select minimum probability that text relates a topic before it is included in the summary.', min_value = 0.0,
-                           max_value = 1.0, step = 0.01)
-
-DATE_COLUMN = 'date/time'
-DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
-            'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
-my_df = pd.read_csv('article_topics.csv')
+#read in topics and provide as a list of options in a dropdown
 with open('topic_dict.pkl', 'rb') as f:
     topics = pickle.load(f)
+topic = st.selectbox(
+    'Select a topic to see a summary for.',
+    list(topics.values()))
+
+#create slider to allow probablility to be selected
+prob = st.slider('Select minimum probability that text relates a topic before it is included in the summary.', min_value = 0.0,
+                           max_value = 1.0, value = 0.9, step = 0.01)
+
+my_df = pd.read_csv('article_topics.csv')
 
 @st.cache_data
 def load_data(nrows):
