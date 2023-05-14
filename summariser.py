@@ -32,6 +32,13 @@ st.subheader('Top Level Summary')
 st.subheader('In Depth Summary')
 #summaries from chunks here
 
+st.subheader('Source')
+st.text('The summaries regarding "' + str(topic) + '" are sources from the\nfollowing chapters and articles in the FTA.')
+#list chapters and articles here
+
+
+
+
 #data_load_state = st.text('Loading data...')
 #data = load_data(10000)
 #data_load_state.text("Done! (using st.cache_data)")
