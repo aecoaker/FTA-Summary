@@ -39,3 +39,7 @@ st.write("""Free Trade Agreements are long and complex texts, designed to go int
          states can restrict the ways in which they trade. This is necessary from a legislative point of view but makes them
          difficult to navigate for citizens who need to know how they apply to them and their business. A such, providing simple 
          summaries of these texts that are relevant to users is a matter of public good.""")
+
+st.subheader('Why are only some in-depth summaries shown?')
+st.write("""Some topics contain more text than others, because of this, some shorter topics have in-depth summaries that are quite short. 
+            Therefore only in-depth summaries that are significantly longer and more detailed than the top level summaries are printed.""")

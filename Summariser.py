@@ -20,7 +20,7 @@ topic = st.selectbox(
     list(topics.values()))
 t = list(topics.keys())[list(topics.values()).index(topic)]
 
-#create slider to allow probablility to be selected
+#create slider to allow probablility to be selected - removed from current iteration
 #prob = st.slider('Select the lowest probability that text relates to this topic before it is summarised.', min_value = 0.0,
 #                           max_value = 1.0, value = 0.8, step = 0.2)
 
@@ -31,11 +31,12 @@ with open('summaries.pkl', 'rb') as f:
     summaries = pickle.load(f)
 st.markdown(summaries[t])
 
-st.subheader('In Depth Summary')
 #summaries from chunks here
 with open('pre_recursive_summaries.pkl', 'rb') as f:
     pre_recursive_summaries = pickle.load(f)
-st.markdown(pre_recursive_summaries[t])
+if len(pre_recursive_summaries[t]) > len(summaries[t]) * 1.5:
+    st.subheader('In Depth Summary')
+    st.markdown(pre_recursive_summaries[t])
 
 st.subheader('Source')
 st.markdown('The summaries regarding "' + str(topic) + '" are sourced from the\nfollowing chapters and articles in the FTA:')
